@@ -1,0 +1,111 @@
+转自：http://blog.csdn.net/wolinxuebin/article/details/7615098
+一、Line-Height Method
+适用：单行文本垂直居中
+html
+<div id="parent">
+<div id="child">Text here</div>
+</div>
+css
+#child {
+line-height: 200px;
+}
+垂直居中一张图片，代码如下
+html
+<div id="parent">
+<img src="image.png" alt="" />
+</div>
+css
+#parent {
+line-height: 200px;
+}
+#parent img {
+vertical-align: middle;
+}
+
+二、CSS Table Method
+适用：通用
+html
+<div id="parent">
+<div id="child">Content here</div>
+</div>
+css
+#parent {display: table;}
+#child {
+display: table-cell;
+vertical-align: middle;
+}
+低版本 IE fix bug：
+#child {
+display: inline-block;
+}
+
+三、Absolute Positioning and Negative Margin
+适用：块级元素
+html
+<div id="parent">
+<div id="child">Content here</div>
+</div>
+css
+#parent {position: relative;}
+#child {
+position: absolute;
+top: 50%;
+left: 50%;
+height: 30%;
+width: 50%;
+margin: -15% 0 0 -25%;
+}
+
+四、Absolute Positioning and Stretching
+适用：通用，但在IE版本低于7时，不能正常工作
+html
+<div id="parent">
+<div id="child">Content here</div>
+</div>
+css
+#parent {position: relative;}
+#child {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+width: 50%;
+height: 30%;
+margin: auto;
+}
+
+五、Equal Top and Bottom Padding
+适用：通用
+html
+<div id="parent">
+<div id="child">Content here</div>
+</div>
+css
+#parent {
+padding: 5% 0;
+}
+#child {
+padding: 10% 0;
+}
+
+六、Floater Div
+适用：通用
+html
+<div id="parent">
+<div id="floater"></div>
+<div id="child">Content here</div>
+</div>
+css
+#parent {height: 250px;}
+#floater {
+float: left;
+height: 50%;
+width: 100%;
+margin-bottom: -50px;
+}
+#child {
+clear: both;
+height: 100px;
+}
+
