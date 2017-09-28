@@ -1,0 +1,18 @@
+jquery.form.js http://jquery.malsup.com/form/
+异步文件上传
+<form method="post" action="@Url.Action("ReceiveFile", new {controller = "Home" })" enctype="multipart/form-data">
+    <input type="file" name="file1" />
+</form>
+定义form标签的时候要注意enctype="mutipart/form-data"。
+<script type="text/javascript">
+    $(function () {
+        $("[name=file1]").change(function () {//文件改变的时候触发异步提交表单事件。
+            $(this).parents("form").ajaxSubmit({
+                uploadProgress: function (event,position,total,percent) {
+                    //percent就是百分比了
+                    console.log(percent);
+                }
+            });
+        });
+    });
+</script>
