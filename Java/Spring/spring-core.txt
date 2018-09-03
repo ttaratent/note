@@ -1,0 +1,18 @@
+spring-core
+
+-- org.springframework.core
+
+AliasRegistry.java
+接口：（主要为遵照Apache License 2.0的，提供别名注册的基本方法）
+registerAlias、removeAlias、isAlias、getAliases方法
+
+AttributeAccessor.java
+接口：（主要为遵照Apache License 2.0的，提供属性存储器的基本方法）
+setAttribute、getAttribute、removeAttribute、hasAttribute、attributeNames方法
+
+AttributeAccessorSupport.java
+抽象类：实现AttributeAccessor接口，并继承了Serializable，定义了一个私有属性LinkHashMap<String, Object>来存储Attribute
+实现了接口的基本方法，并扩展了copyAttributesFrom复制方法，并重写了equals以及hashCode基本Object的方法
+
+BridgeMethodResolver.java
+
