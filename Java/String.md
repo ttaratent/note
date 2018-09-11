@@ -16,10 +16,11 @@ System.out.printlun(a>a+1); // true
 String 通过 StringBuffer 进行创建时通过了synchronized关键字进行线程同步  
 
 String类中  
-codePoint 开头的方法主要处理大于两个字节的Unicode字符(一些于之后添加的字符)  
-方法 | 说明  
-----|----  
-codePointAt |  
-codePointBefore |  
-codePointCount | 返回在指定区间内的个数（区别于length，主要在于大于两个字节的Unicode字符）  
-offsetByCodePoints | 返回此String 中从给定的 index 处偏移 codePointOffset 个代码点的索引  
+codePoint 开头的方法主要处理大于两个字节的Unicode字符(一些于之后添加的字符)   
+
+  方法  |  说明  
+  -------------  |  -------------  
+  codePointAt  |  
+  codePointBefore  |  
+  codePointCount  |  返回在指定区间内的个数（区别于length，主要在于大于两个字节的Unicode字符）  
+  offsetByCodePoints  |  返回此String 中从给定的 index 处偏移 codePointOffset 个代码点的索引  
