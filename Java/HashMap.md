@@ -5,7 +5,25 @@ HashMap主要通过一个Entry<K,V>数组进行存储。transient关键字主要
 ```
 transient Entry<K,V>[] table = (Entry<K,V>[]) EMPTY_TABLE;
 ```
-其中Entry是HashMap的静态内部类
+其中Entry是HashMap的静态内部类，是基础的存储单元，具体代码如下：
+```
+static class Entry<K,V> implements Map.Entry<K,V> {
+  final K key;
+  V value;
+  Entry<K,V> next; // 存储指向下一个Entry的引用，单链表结构
+  int hash; // 对key的hashcode值进行hash运算后得到的值，存储在Entry，避免重复计算
+
+  /**
+   * Creates new entry
+   */
+   Entry(int h, K k, V v, Entry<K,V> n) {
+     value = v;
+     next = n;
+     key = k;
+     hash = h;
+   }
+}
+```
 
 
 HashMap的数据存储的主体位置主要是通过hash函数，对Key值进行计算，计算出对应的下标，如果数组中该下标的位置链表不存在数据，则将该对象通过Entry<K,V>存入该位置，若已有数据，则在当前Entry对象的next记录新增对象的引用，进行存储。
