@@ -24,7 +24,7 @@ static class Entry<K,V> implements Map.Entry<K,V> {
    }
 }
 ```
-
+HashMap主要是通过数组+链表的形式进行数据的存储，其中数组用于存储不同hashcode的对象，而链表主要是解决哈希冲突导致的问题，即通过hashCode方法计算出来的hash值相同时，通过链表进行数据的存储，所以HashMap的性能主要取决于链表数量的多少，也就是hash算法的优劣。
 
 HashMap的数据存储的主体位置主要是通过hash函数，对Key值进行计算，计算出对应的下标，如果数组中该下标的位置链表不存在数据，则将该对象通过Entry<K,V>存入该位置，若已有数据，则在当前Entry对象的next记录新增对象的引用，进行存储。
 
