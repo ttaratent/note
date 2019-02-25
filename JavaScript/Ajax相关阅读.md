@@ -32,3 +32,48 @@ if(xhr.status >= 200 && xhr.status <300 ||xhr.status == 304) {
   alert('request was unsuccessful:' + xhr.status);
 }
 ```
+
+当使用同步请求时，xhr对象在send过后，会在回调之后会修改readyState：
+```
+//发送请求
+xhr.open('get','/uploads/rs/26/ddzmgynp/message.xml',false);
+xhr.send();
+//同步接受响应
+if(xhr.readyState == 4){
+    if(xhr.status == 200){
+        //实际操作
+        result.innerHTML += xhr.responseText;
+    }
+}
+```
+
+异步请求时，xhr对象的readyState属性
+```
+0(UNSENT):未初始化。尚未调用open()方法
+1(OPENED):启动。已经调用open()方法，但尚未调用send()方法
+2(HEADERS_RECEIVED):发送。己经调用send()方法，且接收到头信息
+3(LOADING):接收。已经接收到部分响应主体信息
+4(DONE):完成。已经接收到全部响应数据，而且已经可以在客户端使用了
+// 需要提前对事件进行申明
+xhr.onreadystatechange = function(){
+    if(xhr.readyState === 4){
+        if(xhr.status == 200){
+            alert(xhr.responseText);
+        }
+    }
+}
+//发送请求
+xhr.open('get','message.xml',true);
+xhr.send();
+```
+
+超时：
+timeout属性，定义当超过一定时间后，该请求会被抛弃。
+```
+xhr.open('post','test.php',true);
+xhr.ontimeout = function(){
+    console.log('The request timed out.');
+}
+xhr.timeout = 1000;
+xhr.send();
+```
