@@ -38,6 +38,32 @@
 </script>
 ```
 
-根据：[createTextRange](https://blog.csdn.net/baidu_33033415/article/details/62882699)这两个api在iframe中不能实现。    
+注：我个人实践在Extjs的iframe中使用可以对Form中的相关textfield进行单击选中的功能，但是遇到一定问题暂时没有解决。以下是我处理的方式：    
+```
+// 如此设置后，在进行焦点触发时，确实会全选，但是之后似乎Ext.form本身后有一个将光标移动到最后的动作，导致全选只触发可一下子
+var form = Ext.create('Ext.form.Panel', {
+  formName : 'form',
+  id : 'form',
+  items : [
+    {id:'text', fieldLabel : '测试输入', listeners : {
+        focus : function (that, event, eOpts) {
+          var input = Ext.get(that.inputEl.id).dom;
+          if (input.setSelectionRange) { // Chrome等
+              input.focus(); // 可不用根据情况决定
+              input.setSelectionRange(selectionStart, selectionEnd);
+          } else if (input.createTextRange) { // IE
+              var range = input.createTextRange();
+              range.collapse(true);
+              range.moveEnd('character', selectionEnd);
+              range.moveStart('character', selectionStart);
+              range.select();
+          }
+        }
+      }}
+  ]
+  });
+```
+
+[createTextRange](https://blog.csdn.net/baidu_33033415/article/details/62882699)
 疑似iframe的实现[IFrame 系列4 ---- document.selection 全方位兼容解析以及TextRange[createTextRange,createRange]对象的深入解析](https://blog.csdn.net/baidu_33033415/article/details/62882703)    
 参考[input中文本选中部分内容](https://www.jianshu.com/p/52373cc9c9d4)
