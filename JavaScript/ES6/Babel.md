@@ -1,7 +1,3 @@
-## ECMAScript 6标准
-引用：[阮一峰的ES6入门](http://es6.ruanyifeng.com/#docs/intro)    
-ES6-ECMAScript 6是JavaScript的下一代标准，ES6在2015年6月起正式发布，之后根据标准委员会决定每年6月份正式发布一次，作为当年的正式版本，这样一来，就不需要原来的版本号，而是使用年份做为标记。ES6的第一个版本在2015年6月正式发布，正式名称为《ECMAScript 2015标准》（简称ES2015），之后于2016年6月，小幅修订《ECMAScript 2016标准》（简称ES2016）如期发布，因此，ES6既是一个历史名词，也是一个泛指，含义是5.1版以后的JavaScript的下一代标准。    
-
 #### [Babel](https://www.jb51.net/article/135225.htm)
 Babel转码器：Babel是一个广泛使用的ES6转码器，可以将ES6代码转为ES5代码，从而在现有环境执行，这意味着，可以用ES6的方式编写程序，而不用担心现有环境是否支持。
 安装Babel：
