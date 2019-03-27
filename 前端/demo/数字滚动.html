@@ -103,7 +103,6 @@ $(function(){
       $(".js-l-box").each(function(i){
         $(this).attr("data-show", newNums[i]);
         var num = parseInt(newNums[i]) - parseInt(oldNums[i]);
-        console.log('num',num);
         var scrollTop = height * num;
         //$(this).css("margin-top",0);
         $(this).animate({marginTop: "-="+scrollTop+"px"},1500);
