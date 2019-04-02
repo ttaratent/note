@@ -1,4 +1,4 @@
-### ConcurrentHashMap
+### ConcurrentHashMap 1.7
 ConcurrentHashMap异步容器主要是通过将对象锁改为粒度更细的锁，默认分为16个segments并给每一个segment配置一个锁，而在存储数据的时候，将具体存储的数据划分到这16个segments中，而当有并发请求时，对该请求的segment进行加锁，来提高并发的性能，并保证数据的同步。    
 
 将ConcurrentHashMap分成16个segments（桶），而数据键值对存放在HashEntry中，而HashEntry存放于桶的HashEntry数组中
@@ -387,3 +387,6 @@ public boolean isEmpty() {
   return true;
 }
 ```
+
+
+参考：[ConcurrentHashMap总结](https://www.liangzl.com/get-article-detail-28344.html)
