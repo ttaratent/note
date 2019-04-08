@@ -171,3 +171,36 @@ var global = require('system.global')();
 import getGlobal from 'system.global';
 const global = getGlobal();
 ```
+
+### 数组的结构赋值
+[数组的解构赋值](http://es6.ruanyifeng.com/#docs/destructuring)
+```
+let [a, b, c] = [1, 2, 3];
+// 相当于
+var a = 1, b = 2, c = 3;
+```
+
+相当于一种模式的匹配，左右都为数组时，可以开启匹配，根据左边数组的格式，进行对应数据的赋值，当出现无法匹配到时，变量会被赋值为undefind，若右边匹配内容多了，则会被忽略。
+```
+let [foo, [[bar], baz]] = [1, [[2], 3]];
+foo // 1
+bar // 2
+baz // 3
+
+let [ , , third] = ["foo", "bar", "baz"];
+third // "baz"
+
+let [x, , y] = [1, 2, 3];
+x // 1
+y // 3
+
+let [head, ...tail] = [1, 2, 3, 4];
+head // 1
+tail // [2, 3, 4]
+
+let [x, y, ...z] = ['a'];
+x // "a"
+y // undefined
+z // []
+```
+主要是对于某种数据结构存在Iterator接口就可以使用解构赋值，所以对于 Set 结构，也可以使用数组的解构赋值。
