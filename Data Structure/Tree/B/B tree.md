@@ -28,3 +28,7 @@ B树的添加与删除：[B树和B+树的插入、删除图文详解](http://www
 B树的删除，当删除叶子节点Key时，直接删除，且若节点为空则删除该节点，若删除非叶子节点Key时，使用其后继Key替换该Key后再进行删除。
 
 B树的查找，多路进行查找，直到匹配或者无叶子节点为止
+
+B树的一些实现：
+* [B树详细图解与Java完整实现](https://blog.csdn.net/jimo_lonely/article/details/82716142)
+* [B树(Java)实现](https://blog.csdn.net/kalikrick/article/details/27980007)
