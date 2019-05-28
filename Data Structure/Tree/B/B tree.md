@@ -21,7 +21,7 @@ B树中的一个包含n个关键字，n+1个指针的节点的一般形式为：
 
 B树本身每个节点是由Key和Value组成的。
 
-![B树的构建](../../images/btreebuild.gif)
+![B树的构建](../images/btreebuild.gif)
 
 B树的添加与删除：[B树和B+树的插入、删除图文详解](http://www.cnblogs.com/nullzx/p/8729425.html)
 
