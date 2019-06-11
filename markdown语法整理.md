@@ -1,5 +1,7 @@
 ### Markdown 语法整理
-` 主要是懒得每次去查看官网教程了... `
+
+参考：[待办事项、自动目录、流程图、时序图、甘特图](https://www.cnblogs.com/hanzongze/p/markdown-extensions.html)
+
 参考[官网教程](http://www.markdown.cn/)  
 ** markdown兼容HTML： **  
 ```
@@ -233,3 +235,15 @@ Markdown会转为：
 加粗，前后使用`**`包围需要加粗的文字    
 斜体，前后使用`*`包围斜体的文字    
 删除线，前后使用`~~`包围需要的文字
+
+** 待办事项 **
+```
+- []
+- [x]
+```
+
+** 自动目录 TOC 可能需要插件 **    
+而在 Markdown 中，你只需要在整篇文章的任意地方，新起一行并输入`[toc]`，即可在该位置自动生成一个全文内容结构的目录。这个目录是根据你在内容中设置的分级标题来自动生成的。
+
+** 流程图 需要插件 **    
+需要扩展插件[mermaid](https://mermaidjs.github.io/)和[flowchart.js](http://flowchart.js.org/)进行
