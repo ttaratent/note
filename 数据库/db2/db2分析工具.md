@@ -1,5 +1,9 @@
 [db2 EXPLAIN分析SQL](https://blog.csdn.net/lyjiau/article/details/50351358)     
 
+[如何写出更快的 SQL (db2)](https://www.jianshu.com/p/5aa16abd35c5)
+
+[db2调优实践](http://blog.sina.com.cn/s/blog_6a2c7c97010181qs.html)
+
 ## db2exfmt    
 db2exfmt 命令能够将 Explain 表中存储的存取计划信息以文本的形式进行格式化输出。db2exfmt 命令将各项信息更为直观的显示，使用起来更加方便。命令如清单 1 所示：
 ```
